@@ -15,7 +15,7 @@
 -- INFO: conditional to skip this config
 -- if `PRACTICALLI_ASTRO` environment variable set to false
 local practicalli = vim.env.PRACTICALLI_ASTRO
-if practicalli == "false" then return {} end
+-- if practicalli == "false" then return {} end
 
 -- if true then return {} end   INFO: Comment this line to deactivate configuration
 
@@ -138,10 +138,15 @@ return {
     "AstroNvim/astroui",
     ---@type AstroUIOpts
     opts = {
-      colorscheme = "everforest",
+      colorscheme = "kanagawa",
     },
   },
   -- ------------------------------------------
+  {
+    "Olical/conjure",
+    -- load plugin on filetypes
+    ft = { "clojure", "python" },
+  },
 
   -- ------------------------------------------
   -- AstroNvim Core Plugin Options and Key Mappings
@@ -163,13 +168,15 @@ return {
 
           -- Conjure plugin overrides
 
+          ["conjure#client#python#stdio#command"] = "python -i",
+
           -- comment pattern for eval to comment command
           ["conjure#eval#comment_prefix"] = ";; ",
           -- Hightlight evaluated forms
           ["conjure#highlight#enabled"] = true,
 
           -- show HUD REPL log at startup
-          ["conjure#log#hud#enabled"] = false,
+          ["conjure#log#hud#enabled"] = true,
 
           -- auto repl (babashka)
           ["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false,
