@@ -22,6 +22,7 @@ return {
   -- ----------------------------------------------
   -- themes and color
   { import = "astrocommunity.colorscheme.everforest" },
+  { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   -- color picker and highlighter
   { import = "astrocommunity.color.ccc-nvim" },
   -- ----------------------------------------------
